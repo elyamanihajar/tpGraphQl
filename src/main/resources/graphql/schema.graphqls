@@ -11,16 +11,23 @@ type Mutation{
     deleteEtudiant(id:Int):String
 }
 
+type Subscription{
+    etudiantAdded:Etudiant
+    etudiantDeleted:String
+}
+
 type Etudiant{
     id:Int,
     nom:String,
     prenom:String,
     genre:Genre
+    centre:Centre
 }
 input EtudiantDTO{
     nom:String,
     prenom:String,
-    genre:String
+    genre:Genre
+    centreId:Int
 }
 type Centre{
     id:Int
